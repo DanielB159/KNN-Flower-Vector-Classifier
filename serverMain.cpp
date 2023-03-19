@@ -4,12 +4,9 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-
-using std::cout;
-using std::cin;
-using std::endl;
-
 #include <string>
+#include <thread>
+#include <map>
 #include "stringToVec.h"
 #include "typeDistances.h"
 #include "dataInput.h"
@@ -19,10 +16,12 @@ using std::endl;
 #include "Command.h"
 #include "CLI.h"
 
-#include <thread>
-#include <map>
 
+using std::cout;
+using std::cin;
+using std::endl;
 using std::string;
+
 
 
 const char* INVALID_INPUT_STRING = "invalid input";

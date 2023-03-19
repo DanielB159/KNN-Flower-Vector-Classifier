@@ -7,7 +7,12 @@
 #include "typeDistances.h"
 #include "dataInput.h"
 #include "DefaultIO.h"
-#include "Command.h"    //could cause problems
+#include "Command.h"
+#include "UploadFile.h"
+#include "AlgorithmSettings.h"
+#include "ClassifyData.h"
+#include "DisplayResults.h"
+#include "DownloadResults.h"
 
 /// @brief This class manages the server functions.
 class CLI {
