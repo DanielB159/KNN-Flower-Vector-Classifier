@@ -7,14 +7,14 @@
 #include <string>
 #include <thread>
 #include <map>
-#include "stringToVec.h"
-#include "typeDistances.h"
-#include "dataInput.h"
-#include "vectorType.h"
-#include "slct.h"
+#include "VectorRelated/stringToVec.h"
+#include "VectorRelated/typeDistances.h"
+#include "VectorRelated/vectorFeatures.h"
+#include "VectorRelated/vectorType.h"
+#include "VectorRelated/slct.h"
 #include "DefaultIO.h"
 #include "SocketIO.h"
-#include "Command.h"
+#include "Commands/Command.h"
 #include "CLI.h"
 
 

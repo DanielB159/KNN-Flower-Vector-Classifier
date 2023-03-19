@@ -1,6 +1,4 @@
 #include "stringToVec.h"
-using namespace std;
-#include <iostream>
 
 /// @brief This functions asserts if two string inputs are vectors of doubles of the same size
 /// @param s1 First input string

@@ -4,15 +4,15 @@
 #include <string>
 #include <vector>
 
-#include "typeDistances.h"
-#include "dataInput.h"
+#include "VectorRelated/typeDistances.h"
+#include "VectorRelated/vectorFeatures.h"
 #include "DefaultIO.h"
-#include "Command.h"
-#include "UploadFile.h"
-#include "AlgorithmSettings.h"
-#include "ClassifyData.h"
-#include "DisplayResults.h"
-#include "DownloadResults.h"
+#include "Commands/Command.h"
+#include "Commands/UploadFile.h"
+#include "Commands/AlgorithmSettings.h"
+#include "Commands/ClassifyData.h"
+#include "Commands/DisplayResults.h"
+#include "Commands/DownloadResults.h"
 
 /// @brief This class manages the server functions.
 class CLI {

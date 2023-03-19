@@ -7,12 +7,12 @@
 #include <iostream>
 #include <cmath>
 
-#include "DefaultIO.h"
-#include "SocketIO.h"
-#include "stringToVec.h"
-#include "typeDistances.h"
-#include "slct.h"
-#include "vectorType.h"
+#include "../DefaultIO.h"
+#include "../SocketIO.h"
+#include "../VectorRelated/stringToVec.h"
+#include "../VectorRelated/typeDistances.h"
+#include "../VectorRelated/slct.h"
+#include "../VectorRelated/vectorType.h"
 
 
 /// @brief information shared between commands.

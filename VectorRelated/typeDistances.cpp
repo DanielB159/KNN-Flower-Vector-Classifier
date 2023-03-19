@@ -1,7 +1,4 @@
 #include "typeDistances.h"
-#include <iostream>
-#include <cmath>
-
 
 /// @brief Calculate the Canberra Distance between two vectors.
 /// @param v1 First vector

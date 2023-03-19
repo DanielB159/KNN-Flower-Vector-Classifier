@@ -1,7 +1,8 @@
 
 #ifndef TYPE_DISTANCES_H
 #define TYPE_DISTANCES_H
-
+#include <iostream>
+#include <cmath>
 #include <vector>
 //this is an abstract class of a generic Distance. everhy class that inherits this class implements a functor distance function
 class Distance{

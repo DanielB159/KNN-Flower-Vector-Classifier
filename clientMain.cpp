@@ -7,8 +7,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <fstream>
-#include "stringToVec.h"
-#include "typeDistances.h"
+#include "VectorRelated/stringToVec.h"
+#include "VectorRelated/typeDistances.h"
 #include "networkFunctions.h"
 using namespace std;
 
