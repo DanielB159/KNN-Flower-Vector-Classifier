@@ -7,8 +7,8 @@
 #include <iostream>
 #include <cmath>
 
-#include "../DefaultIO.h"
-#include "../SocketIO.h"
+#include "../Network/DefaultIO.h"
+#include "../Network/SocketIO.h"
 #include "../VectorRelated/stringToVec.h"
 #include "../VectorRelated/typeDistances.h"
 #include "../VectorRelated/slct.h"

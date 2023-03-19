@@ -7,12 +7,13 @@
 #include <unistd.h>
 #include <string.h>
 #include <fstream>
+#include <thread>
 #include "VectorRelated/stringToVec.h"
 #include "VectorRelated/typeDistances.h"
-#include "networkFunctions.h"
+#include "Network/networkFunctions.h"
 using namespace std;
 
-#include <thread>
+
 
 /// @brief send message to server
 /// @param sock socket identifier

@@ -12,10 +12,10 @@
 #include "VectorRelated/vectorFeatures.h"
 #include "VectorRelated/vectorType.h"
 #include "VectorRelated/slct.h"
-#include "DefaultIO.h"
-#include "SocketIO.h"
+#include "Network/DefaultIO.h"
+#include "Network/SocketIO.h"
+#include "Network/CLI.h"
 #include "Commands/Command.h"
-#include "CLI.h"
 
 
 using std::cout;
