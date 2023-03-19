@@ -51,7 +51,8 @@ Compilation can be done either using terminal command:  `linux> make`
 This will create two run files: client.out, server.out.  
 To compile only one of the files instead, use:  `linux> make client.out`  or  `linux> make server.out`  
 
-Run server using command:  `linux> ./server.out [file-path] [port-number]`  and client using:  `linux > ./client.out [server-ip] [server-port-number]`
+Run server using command:  `linux> ./server.out [file-path] [port-number]`  
+And client using:  `linux > ./client.out [server-ip] [server-port-number]`
 
 Optionally, could also clean up compiled files using command: `linux> make clean`
 
