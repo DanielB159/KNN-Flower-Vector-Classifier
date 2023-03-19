@@ -14,7 +14,7 @@ networkFunctions.o: Network/networkFunctions.cpp Network/networkFunctions.h
 
 server.out: serverMain.o stringToVec.o slct.o typeDistances.o vectorType.o Command.o CLI.o UploadFile.o AlgorithmSettings.o ClassifyData.o DisplayResults.o DownloadResults.o SocketIO.o
 	g++ -pthread -std=c++11 -o server.out serverMain.o stringToVec.o slct.o typeDistances.o vectorType.o Command.o CLI.o UploadFile.o AlgorithmSettings.o ClassifyData.o DownloadResults.o DisplayResults.o SocketIO.o
-	rm -f *.o
+	rm -f *.o *.gch
 
 serverMain.o: serverMain.cpp VectorRelated/stringToVec.h VectorRelated/typeDistances.h VectorRelated/vectorFeatures.h VectorRelated/vectorType.h VectorRelated/slct.h Network/DefaultIO.h Network/SocketIO.h Commands/Command.h Network/CLI.h
 	g++ -std=c++11 -c -o serverMain.o serverMain.cpp
