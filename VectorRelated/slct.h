@@ -13,7 +13,7 @@ namespace slct {
             /// @param obj2 second object
             /// @return  boolean of obj1 < obj2
             bool operator()(const T& obj1, const T& obj2);
-    };  //must createa specific implementations for this
+    };
 
     /// @brief swap two objects T.
     /// @tparam T type of object to swap.
