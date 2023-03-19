@@ -14,7 +14,6 @@ using namespace std;
 
 namespace networkFunctions {
     int createTCPclientSocket(const char* ip_adress, int port_no);
-    string sendRecieveFromServer(int sock, string inputString);
 }
 
 #endif

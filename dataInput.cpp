@@ -1,9 +1,4 @@
 #include "dataInput.h"
-#include "stringToVec.h"
-#include <stdio.h>
-#include <string>
-#include <stdexcept>
-#include <cmath>
 
 /// @brief this function is a constructor function for the class dataInput.
 /// @param filepath - the path to a .csv file containing vector values..

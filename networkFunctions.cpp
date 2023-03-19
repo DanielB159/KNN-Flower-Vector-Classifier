@@ -1,35 +1,5 @@
 #include "networkFunctions.h"
 
-//DEPRECATED!!!
-string networkFunctions::sendRecieveFromServer(int sock, string inputString) {
-    char data_addr[inputString.length()];
-                //copying the input to data_addr
-                strcpy(data_addr, inputString.c_str());
-                //sending the data to the server
-                int sent_bytes = send(sock, data_addr, inputString.length(), 0);
-                if (sent_bytes < 0) {
-                    cout << "error while sending to the server!" << endl;
-                    return "Error";
-                }
-                char buffer[128];
-                int expected_data_size = sizeof(buffer);
-                //recieving the answer from the server
-                int read_bytes = recv(sock, buffer, expected_data_size, 0);
-                //validating that data was recieved
-                if (read_bytes == 0) {
-                    cout << "the server is closed!" << endl;
-                    return "Error";
-                }
-                if (read_bytes < 0) {
-                    cout << "error while recieving from the server!" << endl;
-                    return "Error";
-                }
-                //converting buffer to string
-                string output(buffer);
-                return output;
-                
-}
-
 /// @brief Create TCP client socket
 /// @param ip_adress ip address of server
 /// @param port_no port of server

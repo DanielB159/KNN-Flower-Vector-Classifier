@@ -13,6 +13,7 @@
 #include "vectorType.h"
 #include "slct.h"
 #include "DefaultIO.h"
+#include "SocketIO.h"
 #include "Command.h"
 #include "CLI.h"
 

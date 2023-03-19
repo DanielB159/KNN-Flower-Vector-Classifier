@@ -5,6 +5,10 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <stdexcept>
+#include <cmath>
+#include "stringToVec.h"
+
 
 //this nemaspace defines two structs of ways to save a vector. {vector, type} or {distanceFromInput, type}
 namespace vectorFeatures{

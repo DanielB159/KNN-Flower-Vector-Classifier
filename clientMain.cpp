@@ -6,9 +6,9 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+#include <fstream>
 #include "stringToVec.h"
 #include "typeDistances.h"
-#include "vectorType.h"
 #include "networkFunctions.h"
 using namespace std;
 
@@ -159,7 +159,7 @@ void sendFile(int sock) {
 /// @param argc num of arguments
 /// @param argv arguments
 /// @return exit code
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     //first, check if there are three arguments,
     if (argc != 3) {
         cout << "invalid input" << endl;

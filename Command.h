@@ -8,6 +8,7 @@
 #include <cmath>
 
 #include "DefaultIO.h"
+#include "SocketIO.h"
 #include "stringToVec.h"
 #include "typeDistances.h"
 #include "slct.h"
@@ -31,27 +32,15 @@ class Command {
         SocketIO dio;
     
     public:
-        Command() : dio(0){}
-        ~Command() {}
-
-        void setDio(int clientSocket) {
-            SocketIO sio(clientSocket);
-            this->dio = sio;
-        }
-        void setDescription(std::string s) {
-            this->description = s;
-        }
-        std::string getDescription() {
-            return this->description;
-        }
+        Command();
+        ~Command();
+        void setDio(int clientSocket);
+        void setDescription(std::string s);
+        std::string getDescription();
         //send a message to the client
-        void sendToClient(std::string message) {
-            dio.write(message);
-        }
+        void sendToClient(std::string message);
         //get a message from the client
-        std::string getFromClient() {
-            return dio.read();
-        }
+        std::string getFromClient();
         virtual void execute(CLIDetails* cli) = 0;
 };
 
