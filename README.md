@@ -13,15 +13,36 @@ KNN(Vector v, int k):
 ```
 
 ## Design
-The program is split to two processes. **the server proccess** and **the client proccess**. The client handles the requeses from the user.  
+The program is split to two processes. **the server proccess** and **the client proccess**. The client handles the requeses from the user.
+With all server-client communication implemented using *TCP*.
 The possible requests are:
-- uploading the database of classified and of unclassified vectors to the server.
-- choosing the K number and the distance metric.
-- Classifying the vectors.
-- Showing the classifications to the user in the console.
-- Downloading the classified vectors to the user's computer.
+1. uploading the database of classified and of unclassified vectors to the server.
+2. choosing the K number and the distance metric.
+3. Classifying the vectors.
+4. Showing the classifications to the user in the console.
+5. Downloading the classified vectors to the user's computer.
 
+- To handle multiple clients, the server uses *multithreading* in order to handle all of the clients at once, with at most 40 clients in the queue.
+- The client process also uses *multithreading* to let the user continue the communication with the server while the classified vectors are downloaded in the background in another thread.
+- The 5 possible user requests are implemented using a Command Line Interface (CLI) Design Pattern.
+- The possible Distances are:  
+   1. "AUC" - Euclidian  
+   2. "MAN" - Manhatten  
+   3. "CHB" - Chebyshev  
+   4. "CAN" - Canberra  
+   5. "MIN" - Minkowski  
 
+### Time Complexity
+for n = the number of vectors in the given database, each with dimension m. For each new input, the program runs at time complexity of ***O(n*m)***.
+*O(m)* for calculating each vector's distance from the input, for a total of n times, and then *O(n)* for the select algorithm, and anther
+*O(k)* for finding the most common classification.
+
+## Key Learnings
+By developing this project, i have gained experience in the following areas:  
+- *KNN classification algorithm*.
+- *TCP* server and client implementation in C++.
+- *multithreading* programming.
+- Implementing a *Command Line Interface* (CLI) design pattern.
 
 Compilation can be done either using shell command (while at the project path ./GalDanielAdvProg1/):
 linux> make
@@ -62,7 +83,7 @@ Note that option 5 can be executed even if option 4 was not used yet.
 
 Optimization:
 Only the necessary database is loaded to the server program, and only loaded once at initialization.
-for n = the number of vectors in the given database, each with dimension m. For each new input, the program runs at time complexity of  O(n*m).
+for n = the number of vectors in the given database, each with dimension m. For each new input, the program runs at time complexity of O(n*m).
 O(m) for calculating each vector's distance from the input, for a total of n times, and then O(n) for the select algorithm, and anther
 O(n) for finding the most common classification.
 
