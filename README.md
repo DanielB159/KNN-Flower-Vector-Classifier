@@ -26,11 +26,13 @@ The possible requests are:
 - The client process also uses *multithreading* to let the user continue the communication with the server while the classified vectors are downloaded in the background in another thread.
 - The 5 possible user requests are implemented using a Command Line Interface (CLI) Design Pattern.
 - The possible Distances are:  
-   1. "AUC" - Euclidian  
-   2. "MAN" - Manhatten  
-   3. "CHB" - Chebyshev  
-   4. "CAN" - Canberra  
-   5. "MIN" - Minkowski  
+1. "AUC" - Euclidian (more info at https://en.wikipedia.org/wiki/Euclidean_distance)  
+2. "MAN" - Manhatten  (more info at https://en.wikipedia.org/wiki/Taxicab_geometry)  
+3. "CHB" - Chebyshev  (more info at https://en.wikipedia.org/wiki/Chebyshev_distance)  
+4. "CAN" - Canberra  (more info at https://en.wikipedia.org/wiki/Canberra_distance)  
+5. "MIN" - Minkowski  (more info at https://en.wikipedia.org/wiki/Minkowski_distance)  
+**implementation Note** - Since the Euclidian and the Manhattan distance are subsets of the Minkowski distance, they also use its implementation.
+The default input for the Minkowski distance being simply the Euclidian distance (when P = 2. It's defined as a const).
 
 ### Time Complexity
 for n = the number of vectors in the given database, each with dimension m. For each new input, the program runs at time complexity of ***O(n*m)***.
@@ -44,56 +46,99 @@ By developing this project, i have gained experience in the following areas:
 - *multithreading* programming.
 - Implementing a *Command Line Interface* (CLI) design pattern.
 
-Compilation can be done either using shell command (while at the project path ./GalDanielAdvProg1/):
-linux> make
+## Compilation and Example run
+Compilation can be done either using terminal command:  `linux> make`  
+This will create two run files: client.out, server.out.  
+To compile only one of the files instead, use:  `linux> make client.out`  or  `linux> make server.out`  
 
-This will create two run files: client.out, server.out.
+Run server using command:  `linux> ./server.out [file-path] [port-number]`  and client using:  `linux > ./client.out [server-ip] [server-port-number]`
 
-To compile only one of the files, use instead:
-linux> make client.out
-or
-linux> make server.out
+Optionally, could also clean up compiled files using command: `linux> make clean`
 
-Run server using command:
-linux> ./server.out [file] [port]
-And client using:
-linux > ./client.out [ip] [port]
+Example run:
+server:
+```
+./server.out 60000
 
-Optionally, could also clean up compiled files using command:
-linux> make clean
+```
+client:
+```
+./client.out 127.0.0.1 60000
+Welcome to the KNN Classifier Server. Please choose an option:
+1. upload an unclassified csv data file
+2. algorithm settings
+3. classify data
+4. display results
+5. download results
+8. exit
 
-This program implements algorithm KNN (K Nearest Neighbours) on a database of classified vegetation, between a local client and a different server.
-The database contains examples for flower data, and the program calculates which flower classification most resembles a given input flower vector based on it.
-'dataInput' contains implementation for reading from the database. During the course of the process's runtime, only the given database is read and loaded once.
-It then parses the data in the set into a list of vectors using implementation in 'stringToVec'.
-For each new flower vector, the program generates a list of distances using 5 distance classes inheriting from a single interface.
-It then uses an median of medians select algorithm to find the kth closest vector and partition based on it, and calculates the most common classification within the kth closest vectors to the input vector using a map data structure.
+1
 
-The server implements a multi-threaded TCP connection, allowing for multiple users to connect to it. And use its functionality separately at once.
-The server also implements a Command design pattern, to help with modularity within the server.
+Please upload your local train csv file.
+datasets/iris/iris_classified.csv
+Please upload your local test csv file.
+datasets/iris/iris_Unclassified.csv
 
-Usage:
-On the client side, upon connecting to server, the user will be presented with a menu for commands the server is capable of. They should input a number 1 through 5 to select one of them, or 8 to close connection with the server.
+Welcome to the KNN Classifier Server. Please choose an option:
+1. upload an unclassified csv data file
+2. algorithm settings
+3. classify data
+4. display results
+5. download results
+8. exit
 
-The user should first use option 1 to upload classified and unclassified vector information (.csv).
-The user may then specify the distance function and k value they would like to classify by, using option 2 on the menu. If no input was chosen, the KNN algorithm will use the default arguments of k=5 and Euclidian distance.
-Then, option 3 will ask the server to classify your unclassified file, using the classified information received.
-Option 4 will then print those ordered results to the user, and those classifications can be downloaded to a file on a separate result using option 5.
-Note that option 5 can be executed even if option 4 was not used yet. 
+2
 
-Optimization:
-Only the necessary database is loaded to the server program, and only loaded once at initialization.
-for n = the number of vectors in the given database, each with dimension m. For each new input, the program runs at time complexity of O(n*m).
-O(m) for calculating each vector's distance from the input, for a total of n times, and then O(n) for the select algorithm, and anther
-O(n) for finding the most common classification.
+The current KNN parameters are: K = 5, distance metric = AUC
+19 CHB
 
-Notes:
-Since the Euclidian and the Manhattan distance are subsets of the Minkowski distance, they also use its implementation.
-The default input for the Minkowski distance being simply the Euclidian distance (when P = 2. It's defined as a const).
+Welcome to the KNN Classifier Server. Please choose an option:
+1. upload an unclassified csv data file
+2. algorithm settings
+3. classify data
+4. display results
+5. download results
+8. exit
 
-*distances functions:
-AUC: Euclidian
-MAN: Manhatten
-CHB: Chebyshev
-CAN: Canberra
-MIN: Minkowski
+3
+
+classifying data complete
+
+Welcome to the KNN Classifier Server. Please choose an option:
+1. upload an unclassified csv data file
+2. algorithm settings
+3. classify data
+4. display results
+5. download results
+8. exit
+
+4
+
+1 Iris-setosa
+2 Iris-virginica
+3 Iris-virginica
+4 Iris-versicolor
+5 Iris-versicolor
+6 Iris-setosa
+7 Iris-virginica
+8 Iris-setosa
+9 Iris-virginica
+10 Iris-setosa
+11 Iris-versicolor
+12 Iris-virginica
+13 Iris-virginica
+14 Iris-versicolor
+15 Iris-setosa
+Done.
+
+Welcome to the KNN Classifier Server. Please choose an option:
+1. upload an unclassified csv data file
+2. algorithm settings
+3. classify data
+4. display results
+5. download results
+8. exit
+
+8
+
+```
