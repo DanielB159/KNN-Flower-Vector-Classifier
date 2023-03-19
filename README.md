@@ -1,4 +1,27 @@
-# GalDanielAdvProg1
+# KNN-Flower-Vector-Classifier
+## Introduction
+This is a console application for classifying input vectors using the **KNN classification algorithm**.
+
+#### What is the KNN classification algorithm?
+KNN (K - nearest neighbor) is an algorithm for classifying an **unclassified** input vector of x elements based on a given database of at least K other **classified** vectors of the same length. The pseudocode for the algorithm:  
+
+```
+KNN(Vector v, int k):
+- find K closest vectors in database by some distance metric.
+- define type to be the most frequent type of all k closest vectors.
+- return type.
+```
+
+## Design
+The program is split to two processes. **the server proccess** and **the client proccess**. The client handles the requeses from the user.  
+The possible requests are:
+- uploading the database of classified and of unclassified vectors to the server.
+- choosing the K number and the distance metric.
+- Classifying the vectors.
+- Showing the classifications to the user in the console.
+- Downloading the classified vectors to the user's computer.
+
+
 
 Compilation can be done either using shell command (while at the project path ./GalDanielAdvProg1/):
 linux> make
