@@ -56,7 +56,7 @@ And client using:  `linux > ./client.out [server-ip] [server-port-number]`
 
 Optionally, could also clean up compiled files using command: `linux> make clean`
 
-####Example run:  
+#### Example run:  
 server:
 ```
 ./server.out 60000
